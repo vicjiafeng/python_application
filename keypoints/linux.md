@@ -36,7 +36,26 @@ ___
 
          mkdir t    创建名为t的文件夹
          
-         mkdir -p /tmp/test1/file1/t    在tmp目录下创建路径为/test1/file1/t 的目录，若不存在则创建
+         mkdir -p /tmp/test1/file1/t    在tmp目录下创建路径为/test1/file1/t 的目录，若不存在则创建     
          
-* rm命令---删除一个目录中的一个或多个文件或目录，rm后面没有-r选项，则不会删除目录，rm删除文件仍可恢复
+* rm命令--删除一个目录中的一个或多个文件或目录，rm后面没有-r选项，则不会删除目录，rm删除文件仍可恢复
+
+
+         rm [选项] 文件
+         
+         rm -i *.log          删除log文件，删除前逐一询问确认
+         
+         rm -- -f*            删除f开头的文件
+       
+* mv命令
+
+         mv test.log test1.txt         将第一个文件test.log重命名为test.txt
+         
+         mv test.log /test1            将test.log移动到test1目录下
+         
+         mv *../                       移动当前文件夹下的所有文件到上一级目录
+         
+* cp命令
+
+         
          
