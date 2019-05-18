@@ -204,7 +204,7 @@ ___
 
          wc [option] file                            命令格式
          
-         cat test.txt | wc -l                    统计输出结果的行数(-c:统计字节数；-l:统计行数;-m:统计字符数
+         cat test.txt | wc -l                    统计输出结果的行数(-c:统计字节数；-l:统计行数;-m:统计字符数)
          
 * ps命令
 
