@@ -93,7 +93,7 @@ def merge_pass(lfrom,lto,llen,slen):
     if i + slen < llen:
         merge(lfrom,lto,i,i+slen,llen)         #剩下两段，后一段长度小于slen
     else:
-        for i in range(i,llen):                #只剩下一段，复制到表lto
+        for j in range(i,llen):                #只剩下一段，复制到表lto
             lto[j] = lfrom[j]
 
 def merge_sort(lst):
