@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # coding:utf-8
-''' mst '''
+''' mst 最小生成树 '''
 '''Kruskal'''
 def Kruskal(graph):
     vnum = graph.vertex_num()

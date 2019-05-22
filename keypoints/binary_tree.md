@@ -89,5 +89,15 @@ ___
 
   * 模型
   
+     ![](https://github.com/vicjiafeng/python_application/blob/master/keypoints/image/01.png)
+    
+    * 深度优先遍历
+    
+          先根序遍历：  A B D H E I C F J K G
+          
+          后根序遍历：  H D I E B J K F G C A
+          
+          中根序遍历：  D H B E I A J F K C G
+  
          
          
