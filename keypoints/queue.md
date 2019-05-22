@@ -99,9 +99,9 @@ ___
                   if start == end:
                       print("path found.")
                       return
-                  qu = squeue()
-                  mark(maze,start)
-                  qu.enquue(start)                                              #入队
+                  qu = SQueue()
+                  mark(maze, start)
+                  qu.enqueue(start)                                              #入队
                   while not qu.is_empty():
                       pos = qu.dequeue()                                        #取下一个位置
                       for i in range(4):
