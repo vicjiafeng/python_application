@@ -20,7 +20,7 @@ def str_matching(t,p):
 
 '''
     灵活的kmp方法(不存在回溯)实现字符串匹配，复杂度为O(n)
-    对于模式串中每个字符Pi设置对应的Pki,用Pki与目标串tj比较，在匹配之前，就可以先安排好模式串中每个字符对应的Pki
+    对于模式串中每个字符Pi设置对应的P<sub>ki</sub>,用Pki与目标串tj比较，在匹配之前，就可以先安排好模式串中每个字符对应的Pki
 '''
 def str_kmp_matching(t,p,pnext):    #表pnext记录模式串m每个字符i对应的Ki值
     j, i = 0, 0
