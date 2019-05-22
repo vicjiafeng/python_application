@@ -17,7 +17,7 @@ def select_sort(lst):                 #选择排序
         for j in range(i,len(lst)):
             if lst[j].key < lst[k].key:
                 k = j
-        if i != k:                      lst[k]是确定最小元素，检查是否交换
+        if i != k:                      #lst[k]是确定最小元素，检查是否交换
             lst[i], lst[k] = lst[k], lst[i]
 
 ''' bubble_sort '''
