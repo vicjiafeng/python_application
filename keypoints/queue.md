@@ -55,6 +55,7 @@ ___
                   
 
   * 递归
+  
               def find_path(maze,pos,end):                           #pos表示搜索的当前位置
                   mark(maze,pos)        
                   if pos == end:                                     #已到达出口
