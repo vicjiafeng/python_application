@@ -91,7 +91,7 @@ ___
   
      ![](https://github.com/vicjiafeng/python_application/blob/master/keypoints/image/01.png)
     
-   * 深度优先遍历
+    * 深度优先遍历
     
           先根序遍历：  A B D H E I C F J K G
           
