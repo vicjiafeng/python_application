@@ -4,10 +4,16 @@ ___
 
  * 栈是后进先出的关系结构，对于顺序表，后端插入和删除是O(1),对于链接表，前端插入和删除是O(1)
          
-         class SStack():                                       #基于顺序表技术实现栈类,链接表与之相似
-             def __init__(self):
+```python     
+   
+         class SStack():                    #基于顺序表技术实现栈类,链接表与之相似      
+       
+             def __init__(self):                         
+             
                  self._elems = []
+                 
              def is_empty(self):
+             
                  return self._elems == []
              def top(self):
                  if self._elems == []:
@@ -19,6 +25,7 @@ ___
                  if self._elems == []:
                      raise StackUnderflow("in SStack.pop()") 
                  return self._elems.pop()
+```
                  
 ### 2. 应用
 
@@ -40,6 +47,7 @@ ___
   
   * 后缀表达式求值
   
+  ```python
              def suf_exp_evalutor(exp):        #exp是一个项的表
                  operators = "+-*/"
                  st = ESStack()                #检查栈的元素个数（class ESStack(SStack):def depth（self）： return len(self._elems))
@@ -68,8 +76,11 @@ ___
                  if st.depth() == 1:
                      return st.pop()
                  raise SyntacError("Extra operand.")
+```
+
+  * 中缀表达式转换后缀表达式   
   
-  * 中缀表达式转换后缀表达式    
+  ```python
   
                  def trans_infix_suffix(line):
                      opertor_rank = {"(":1, "+":3, "-":3, "*":5, "/":5}       #各运算符优先级
@@ -118,19 +129,23 @@ ___
                              j += 1
                          yield line [i:j]                           #生成运算对象子串
                          i = j
-                         
+```
+
 ### 3. 递归
       
   * 阶乘的递归计算
   
+  ```python 
                 def fact(n):
                     if n==0:
                         return 1
                     else:
                         return n * fact(n-1)
+  ```
                         
   * 阶乘的非递归计算
-                 
+  
+  ```python               
                 def non_fact(n):
                     res = 1
                     st = SStack()
@@ -140,7 +155,8 @@ ___
                     while not st.is_empty():
                         res *= st.pop()
                     return res
-  * 总结
+ ```
+ * 总结
         
              任何一个递归定义的函数都可以通过引用一个栈保存中间结果的方式，翻译成一个非递归的过程。但针对不同问题，递归与非递归复杂度不同（背包问题）
                         
