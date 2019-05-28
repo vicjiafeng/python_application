@@ -1,3 +1,18 @@
 # python_application
 ___
+![](https://img.shields.io/badge/donate-github-brightgreen.svg)
+![](https://img.shields.io/badge/self_edited-vic-brightgreen.svg)
+
 #### There are some basic [python application](https://github.com/vicjiafeng/python_application/tree/master/application) and [some knowledge](https://github.com/vicjiafeng/python_application/tree/master/keypoints)
+
+## Content
+
+  * some important python basic framework, such as bintree, garph...
+  
+  * some basic python knowledge, such as regexp, sort, btree, bptree...
+  
+  * basic linux instructions
+  
+  * process and thread knowlegde
+  
+  to be continued...
