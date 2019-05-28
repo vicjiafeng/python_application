@@ -82,9 +82,9 @@ ___
                   if lst[i] > lst[i+1]:
                       return False
               return True
-      while not bogo(lst):
-          random.shuffle(lst)
-      return lst
+          while not bogo(lst):
+              random.shuffle(lst)
+          return lst
 ```
               
               
