@@ -40,3 +40,36 @@ ___
 
 ```python
       def bubble_sort(lst):
+          for i in range(len(lst)-1):
+              for j in range(len(lst)-1-i):
+                  if lst[j] > lst[j+1]:
+                      lst[j], lst[j+1] = lst[j+1], lst[j]
+          return lst
+```
+
+### 4. 插入排序
+
+```python
+      def insert_sort(lst):
+          for i in range(1,len(lst)):
+              while i > 0 and lst[i-1] > lst[i]:
+                  lst[i],lst[i-1]=lst[i-1],lst[i]
+                  i -= 1
+          return lst
+```
+
+### 5. 选择排序
+
+```python
+      def select_sort(lst):
+          for i in range(len(lst)-1):
+              k = i
+              for j in range(i,len(lst)):
+                  if lst[j] < lst[k]:
+                      k = j
+              lst[k], lst[i] = lst[i], lst[k]
+          return lst
+```
+
+### 6. 
+                      
