@@ -9,6 +9,7 @@ def insert_sort(lst):                #插入排序
             lst[j] = lst[j-1]            #逐个后移元素
             j -= 1
     lst[j] = x
+    return lst
 
 ''' select_sort '''
 def select_sort(lst):                 #选择排序
@@ -19,13 +20,15 @@ def select_sort(lst):                 #选择排序
                 k = j
         if i != k:                      #lst[k]是确定最小元素，检查是否交换
             lst[i], lst[k] = lst[k], lst[i]
+    return lst
 
 ''' bubble_sort '''
 def bubble_sort(lst):                         #交换排序（冒泡排序）
     for i in range(len(lst)):
-        for j in range(1,len(lst)-i):
+        for j in range(len(lst)-i):
             if lst[j-1].key > lst[j].key:
                 lst[j], lst[j-1] = lst[j-1], lst[j]
+    return lst
 
 ''' quick_sort '''
 #快速排序, 时间复杂度O(nlogn), 空间复杂度O(n)，不稳定不适应
