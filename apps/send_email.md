@@ -38,10 +38,10 @@ ___
       msg_content = input(u'请输入邮件主内容:')                          #邮件正文是MIMEText
       msg.attach(MIMEText(msg_content, 'plain', 'utf-8'))
       with open(u'/Users/xxx/1.jpg', 'rb') as f:                      #可读取本地图片
-      mime = MIMEBase('image', 'jpg', filename='name.png')            #jpg/png可以切换，图片名称注意对应
+      #mime = MIMEBase('image', 'jpg', filename='name.png')            jpg/png可以切换，图片名称注意对应
       
       #添加头文件
-      mime.add_header('Content-Disposition', 'attachment', filename='name.png')     #图片名称注意对应
+      mime.add_header('Content-Disposition', 'attachment', filename='1.jpg')     #图片名称注意对应
       mime.add_header('Content-ID', '<0>')
       mime.add_header('X-Attachment-Id', '0')
       mime.set_payload(f.read())                                      #读取附件内容
