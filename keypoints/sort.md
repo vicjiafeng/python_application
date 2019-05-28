@@ -71,5 +71,22 @@ ___
           return lst
 ```
 
-### 6. 
+### 6. 猴子排序
+
+```python
+      def bogo_sort(lst):
+          def bogo(lst):
+              if len(lst)<2:
+                  return True
+              for  i in range(len(lst)-1):
+                  if lst[i] > lst[i+1]:
+                      return False
+              return True
+      while not bogo(lst):
+          random.shuffle(lst)
+      return lst
+```
+              
+              
+          
                       
