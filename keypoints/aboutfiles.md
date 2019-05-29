@@ -1,0 +1,79 @@
+# 文件的读写
+___
+
+#### 在Python中实现文件的读写操作其实非常简单，通过Python内置的open函数，我们可以指定文件名、操作模式、编码信息等来获得操作文件的对象，接下来就可以对文件进行读写操作了
+
+ | 操作模式 | 具体含义                  |
+ |---------|--------------------------|
+ |`'r'`    | 读取（默认）                |
+ |`'w'     |写入（会先截断之前的内容)      |
+ |`'x'`    |写入，如果文件已经存在会产生异常 |
+ |`'a'`    |追加，将内容写入到已有文件的末尾 |
+ |`'b'`    |二进制文件                   |
+ |`'t'`    |文本模式                    |
+ |`'+'`    |更新(可读可写)               |
+ 
+ ### 1. 读文件
+ 
+ * 读写文本文件时，需要在使用`open`函数时指定好带路径的文件名(可以说相对路径也可以说绝对路径),并把文件模式设置为`'r'`(不指定默认为`'r'`)，然后通过encoding参数指定编码(不指定时，默认为系统默认编码)，示例如下：
+ 
+   ```python
+       def main():
+           f = open('test.txt', 'r', encoding='utf-8')    # with open('test.txt', 'r', encoding='utf-8') as f 使用with关键字在离开环境时自动释放文件资源
+           print(f.read())
+           f.close
+       
+       if __name__ = '__main__':
+           main()
+   ```
+   
+ * 除了使用文件对象的read方法读取文件之外，还可以使用for-in循环逐行读取或者用readlines方法将文件按行读取到一个列表容器中，示例如下：
+ 
+   ```python
+         #一次性读取文件
+       def main():
+           with open('test.txt', 'r', encoding='utf-8') as f:
+               print(f.read())
+               
+         #通过for-in循环逐行读取
+       def main():
+           with open('致橡树.txt', mode='r') as f:
+               for line in f:
+                   print(line, end='')
+                   time.sleep(0.5)
+           print()
+           
+          #读取文件按行读取到列表中
+       def main():
+           with open('test.txt') as f:
+               lines = f.readlines()
+           print(lines)
+           
+       if __name__ = '__main__':
+           main()       
+   ```
+### 2. 写文件
+
+* 写文件使用open函数时指定好文件名并将文件模式设置为`'w'`, 如果是对文件进行追加式写入，需要增加`'a'`参数，如果要写入的文件不存在会自动创建文件而不是引发异常。
+
+### 3. 读写二进制文件
+
+* 在`'r'`,`'w'`参数模式后加`'b'`参数即可，示例如下：
+
+  ```python
+      def main():
+          with open('01.jpg', 'rb') as fs1:
+              data = fs1.read()
+              print(type(data))
+          
+          with open('02.png', 'wb') as fs2:
+              fs2.write(data)
+              
+      if __name__ = '__main__':
+          main()
+  ```
+### 4. 读写json文件
+
+           
+          
+   
