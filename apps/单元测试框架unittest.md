@@ -87,7 +87,7 @@ if __name__ == '__main__':
         runner = unittest.TextTestRunner(stream=f, verbosity=2)   
         runner.run(suite)
 ```
-#### 使用test fixture，帮助搭建测试环境和清理环境
+### 使用test fixture，帮助搭建测试环境和清理环境
   * 修改前面的test_mathfunc.py文件，添加setUp()和tearDown()两个方法，即每次执行各个测试case时，前后分别执行setUp()和tearDown()方法，setUp用来为测试准备环境，tearDown用来清理环境
 
 ```python
@@ -108,5 +108,28 @@ class TestMathFunc(unittest.TestCase):
     pass
 ```
   * 如果想要在所有case执行之前准备一次环境，并在所有case执行结束之后再清理环境，我们可以把 setUpClass() 与 tearDownClass()编辑在类方法下
+```python
+class TestMathFunc(unittest.TestCase):
     
+    @classmethod
+    def setUpClass(cls):
+        print "This setUpClass() method only called once."
+        
+        ...
+        
+    @classmethod
+    def tearDown(cls):
+        print "This tearDownClass() method only called once too."
+```
+### 跳过某个case
+#### skip装饰器
+```python
+class TestMathFunc(unittest.TestCase):
+
+    @unittest.skip("I don't want to run this case.")
+    def test_minus(self):
+        print "minus"
+        self.assertEqual(1, minus(3, 2))
+```
+* skip装饰器一共有三个 unittest.skip(reason)、unittest.skipIf(condition, reason)、unittest.skipUnless(condition, reason)，skip无条件跳过，skipIf当condition为True时跳过，skipUnless当condition为False时跳过。
 
