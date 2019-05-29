@@ -23,7 +23,7 @@ ___
            print(f.read())
            f.close
        
-       if __name__ = '__main__':
+       if __name__ == '__main__':
            main()
    ```
    
@@ -49,7 +49,7 @@ ___
                lines = f.readlines()
            print(lines)
            
-       if __name__ = '__main__':
+       if __name__ == '__main__':
            main()       
    ```
 ### 2. 写文件
@@ -69,10 +69,55 @@ ___
           with open('02.png', 'wb') as fs2:
               fs2.write(data)
               
-      if __name__ = '__main__':
+      if __name__ == '__main__':
           main()
   ```
 ### 4. 读写json文件
+
+ * 用json格式保存一个列表或者一个字典中的数据到文件.关于json，它本来是JavaScript语言中创建对象的一种字面量语法，现在已经被广泛的应用于跨平台跨语言的数据交换，python中存在第三方库json，可以帮助程序进行文本格式编辑.下表是json和python中数据类型的简单对比。
+   
+   | python         | json     |
+   |----------------|----------|
+   |dict            |object    |
+   |list, tuple     |array     |
+   |str             |string    |
+   |None            |null      |
+   |True/False      |true/false|
+   |int, float      |number    |
+   
+ * 其中，json模块中有几个重要的函数，如下
+  
+     `'dump'` - 将Python对象按照JSON格式[序列化](https://www.liaoxuefeng.com/wiki/897692888725344/923056033756832)到文件中
+       
+     `'dumps'` - 将Python对象处理成JSON格式的字符串
+       
+     `'load'` - 将文件中的JSON数据[反序列化](https://www.liaoxuefeng.com/wiki/897692888725344/923056033756832)成对象
+       
+     `'loads'` - 将字符串的内容反序列化成Python对象
+ 
+ * 应用示例
+ 
+ ```python
+     import json
+     def main():
+         my_dict={
+             'name':'vic',
+             'age':'27',
+             'gender':'male', 
+             'hobby':'basketball', 
+             'friends':['kobe','curry']
+         }
+         try:
+             with open('data.json', 'w', encoding='utf-8') as fs:
+                 json.dump(my_dict, fs)
+         except IO Error as e:
+             print(e)
+         print('good job!')
+         
+     if __name__ == '__main__':
+         main()
+```
+   
 
            
           
