@@ -101,7 +101,12 @@ class TestMathFunc(unittest.TestCase):
         print "add"
         self.assertEqual(3, add(1, 2))
         self.assertNotEqual(3, add(2, 2))
+    def test_minus(self):
+        ...
+        ...
+        ...
     pass
 ```
+  * 如果想要在所有case执行之前准备一次环境，并在所有case执行结束之后再清理环境，我们可以把 setUpClass() 与 tearDownClass()编辑在类方法下
     
 
