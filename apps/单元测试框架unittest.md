@@ -66,8 +66,8 @@ if __name__=='__main__':
   * `在unittest.main()中加 verbosity 参数可以控制输出的错误报告的详细程度，默认是 1，如果设为 0，则不输出每一用例的执行结果，即没有上面的结果中的第1行；如果设为 2，则输出详细的执行结果`
   
 ### 组织TestSuite()
- ##### 1. 使添加到TestSuite的case按顺序执行
- ##### 2. 一次执行多个case
+ * 使添加到TestSuite的case按顺序执行
+ * 一次执行多个case
 #### 创建test_suite.py
 ```python
 import unittest
@@ -87,6 +87,21 @@ if __name__ == '__main__':
         runner = unittest.TextTestRunner(stream=f, verbosity=2)   
         runner.run(suite)
 ```
-#### test fixture的使用，帮助搭建测试环境和清理环境
+#### 使用test fixture，帮助搭建测试环境和清理环境
+  * 修改前面的test_mathfunc.py文件，添加setUp()和tearDown()两个方法，即每次执行各个测试case时，前后分别执行setUp()和tearDown()方法，setUp用来为测试准备环境，tearDown用来清理环境
 
+```python
+class TestMathFunc(unittest.TestCase):
+
+    def setUp(self):
+        print "do something before test.Prepare environment."
+    def tearDown(self):
+        print "do something after test.Clean up."
+    def test_add(self):
+        print "add"
+        self.assertEqual(3, add(1, 2))
+        self.assertNotEqual(3, add(2, 2))
+    pass
+```
+    
 
