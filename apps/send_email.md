@@ -22,44 +22,42 @@ ___
 #### 2.3 代码
 
 ```python 
-      import smtplib
-      from email import encoders
-      from email.mime.text import MIMEText
-      from email.mime.base import MIMEBase
-      from email.mime.multipart import MIMEMultipart
+  import urllib
+  from smtplib import SMTP
+  from email.header import Header
+  from email.mime.text import MIMEText
+  from email.mime.image import MIMEImage
+  from email.mime.multipart import MIMEMultipart
+  
+  def main():
+      message = MIMEMultipart()                                        #带附件的消息对象
+      text_content = MIMEText(msg_content, 'plain', 'utf-8')
+      
+      message['From'] = Header('xx', 'utf-8')
+      message['To'] = Header('xxx', 'utf-8')
+      message['Subject'] = Header('email_content_blablabla', 'utf-8')  #创建文本内容
+      message.attach(text_content)                                     #将文本内容添加到邮件消息对象中
+         
+      # 读取文件并将文件作为附件添加到邮件消息对象中
+      with open('/Users/xxx/hello.txt', 'rb') as f:
+          txt = MIMEText(f.read(), 'base64', 'utf-8')
+          txt['Content-Type'] = 'text/plain'
+          txt['Content-Disposition'] = 'attachment; filename=hello.txt'
+          message.attach(txt)
+          
+         #with open('/Users/xxx/1.jpg', 'rb') as f:                      可读取本地图片
+         #mime = MIMEBase('image', 'jpg', filename='name.png')           jpg/png可以切换，图片名称注意对应
+     
       sender = 'xxx@163.com'
       passWord = 'xxx'
-      mail_host = 'smtp.163.com'                                      #服务器地址
+      smtper = SMTP('smtp.163.com')                                   #服务器地址
       receivers = ['542904969@qq.com', 'vicfeng@outlook.com',]        #邮件接收人，可添加任意多个
-      
-      msg = MIMEMultipart()                                           #设置email信息
-      msg['Subject'] = input(u'请输入邮件主题：')
-      msg['From'] = sender
-      msg_content = input(u'请输入邮件主内容:')                          #邮件正文是MIMEText
-      msg.attach(MIMEText(msg_content, 'plain', 'utf-8'))
-      with open(u'/Users/xxx/1.jpg', 'rb') as f:                      #可读取本地图片
-      #mime = MIMEBase('image', 'jpg', filename='name.png')            jpg/png可以切换，图片名称注意对应
-      
-      #添加头文件
-      mime.add_header('Content-Disposition', 'attachment', filename='1.jpg')     #图片名称注意对应
-      mime.add_header('Content-ID', '<0>')
-      mime.add_header('X-Attachment-Id', '0')
-      mime.set_payload(f.read())                                      #读取附件内容
-      encoders.encode_base64(mime)                                    #用Base64编码
-      msg.attach(mime)
-      
-      #登陆发送邮件
-      try:
-          s = smtplib.SMTP_SSL("smtp.163.com", 465)                   #163邮箱的端口号为465或994
-          s.set_debuglevel(1)
-          s.login(sender,passWord)
-          for item in receivers:                                      #给列表中的人逐个发送邮件
-              msg['To'] = to = item
-              s.sendemail(sender,to,msg.as_string())
-              print('success!')
-          s.quit()
-          print('job done')
-      except smtplib.SMTPException as e:
-          print ("Falied,%s",e)
+      smtper.login(sender, 'secret_pass')                             #注意此处不是使用密码而是邮件客户端授权码进行登录
+      smtper.sendmail(sender, receivers, message.as_string())
+      smtper.quit()
+      print('邮件发送完成!')
+  if __name__ == '__main__':
+      main()
 ```
+
       
