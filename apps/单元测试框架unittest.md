@@ -24,4 +24,69 @@ ___
 
 * `而对一个测试用例环境的搭建和销毁，是一个fixture。`
 
-     
+### unittest 实例
+
+#### 待测方法文件 mathfunc.py
+
+```python
+def add(a,b):
+    return a+b
+def minus(a,b):
+    return a-b
+def multi(a,b):
+    return a*b
+def divide(a,b):
+    return a/b
+```
+#### 测试文件 test_mathfunc.py
+
+```python
+import unittest
+from mathfunc import *
+
+class TestMathFunc(unittest.TestCase):
+    
+    def test_add(self):
+        self.assertEqual(3, add(1, 2))
+        self.assertNotEqual(3, add(1, 2))
+    def test_minus(self):
+        self.assertEqual(1, minus(3, 2))
+    def test_multi(self):
+        self.assertEqual(6, multi(3, 2))
+    def test_divide(self):
+        self.assertEqual(3, divide(6, 2))
+        self.assertEqual(2.5, divide(5, 2))
+if __name__=='__main__':
+    unittest.main()
+```
+#### 简单说明
+
+  * `每个测试方法要以test开头，才能被unittest识别`
+  * `用例执行的结果的标识，成功是 . ，失败是 F，出错是 E，跳过是 S, 且不是按方法的顺序执行测试的`
+  * `在unittest.main()中加 verbosity 参数可以控制输出的错误报告的详细程度，默认是 1，如果设为 0，则不输出每一用例的执行结果，即没有上面的结果中的第1行；如果设为 2，则输出详细的执行结果`
+  
+### 组织TestSuite()
+ ##### 1. 使添加到TestSuite的case按顺序执行
+ ##### 2. 一次执行多个case
+#### 创建test_suite.py
+```python
+import unittest
+from test_mathfunc import TestMathFunc
+
+if __name__ == '__main__':
+    suite = unittest.TestSuite()
+    tests = [TestMathFunc("test_add"), TestMathFunc("test_minus"), TestMathFunc("test_divide")]
+    
+    suite.addTests(tests)                    
+    #suite.addTest(TestMathFunc("test_multi"))  可以直接添加单个case
+    #suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestMathFunc))  用addTests + TestLoader，传入TestCase         
+    #suite.addTests(unittest.TestLoader().loadTestsFromName('test_mathfunc.TestMathFunc'))     传入'模块名.TestCase名
+    #用TestLoader的方法是无法对case进行排序的，同时，suite中也可以套suite
+    
+    with open('unittestTestReport.txt', 'a') as f:             #同目录下生成了UnittestTextReport.txt, 测试报告显示在txt文件中
+        runner = unittest.TextTestRunner(stream=f, verbosity=2)   
+        runner.run(suite)
+```
+#### test fixture的使用，帮助搭建测试环境和清理环境
+
+
