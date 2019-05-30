@@ -8,4 +8,8 @@ ___
 * MIDDLEWARE：中间件，负责对HTTP请求和接受HTTP响应进行处理；可选组件
 * ITEM PIPELINE:数据管道，负责对爬取的数据进行处理，如去重、写入数据库等
 
+### 流程框架图
+  
+   >![](https://github.com/vicjiafeng/python_application/blob/master/library/images/01.png)
+
 
