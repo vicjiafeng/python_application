@@ -31,4 +31,16 @@ step8: 其中解析出的requests或新的链接构造出Request对象，则经�
 
 ---这个过程反复进行，直到爬完所有的数据
 
+### 常用指令
+  
+  |命令            |说明             |格式                                |
+  |---------------|-----------------|-----------------------------------|
+  |startproject   |创建新工程         |scrapy startproject <name>         |
+  |genspider      |创建一个爬虫       |scarpy genspider [option] <name>   |
+  |settings       |获取爬虫配置信息    |scarpy settings [option]           |
+  |crawl          |允许一个爬虫       |scrapy crawl                       |
+  |list           |列出所有爬虫       |scrapy list                        |
+  |shell          |启动URL调试命令行  |scrapy shell [url]                 |
+  
+
 
