@@ -114,12 +114,13 @@ class TestMathFunc(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         print "This setUpClass() method only called once."
-        
-        ...
-        
+      
     @classmethod
     def tearDown(cls):
         print "This tearDownClass() method only called once too."
+    
+    ...
+    ...
 ```
 ### 跳过某个case
 #### skip装饰器
