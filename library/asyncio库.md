@@ -21,6 +21,17 @@ loop.close()
 #### 解析
  `yield from`语法可以让我们方便地调用另一个generator,遇到时直接中断并执行下一个消息循环。当`asyncio.sleep(1)`(这里等待1s的时间操作里，主线程并未等待，而是执行eventloop中其他可执行的部分)返回时，线程就可以从`yield from`拿到返回值（此处是`None`），然后接着执行下一行语句, 且可以用`task`封装要执行的线程
 
-### 
+### 更新
+  Python 3.5开始引入了新的语法`async`和`await`，即：
+  * `@asyncio.coroutine`替换为`async`
+  * `yield from`替换为`await`
  
+### 实现HTTP框架-aiohttp
+
+* `asyncio`实现了TCP、UDP、SSL等协议，`aiohttp`则是基于`asyncio`实现的HTTP框架
+
+```python
+from aiohttp import web
+```
+
 
