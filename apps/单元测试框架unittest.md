@@ -120,7 +120,6 @@ class TestMathFunc(unittest.TestCase):
         print "This tearDownClass() method only called once too."
     
     ...
-    ...
 ```
 ### 跳过某个case
 #### skip装饰器
