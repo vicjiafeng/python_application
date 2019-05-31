@@ -28,3 +28,25 @@ ___
  
 * 注：如果是定位多个元素，则把对应方法的`element`变为`elements`即可
 
+### Selenium库下webdriver模块常用方法的使用
+#### 控制浏览器操作
+
+|方法          	         |说明              |
+|-----------------------|------------------|
+|set_window_size()      |设置浏览器的大小     |
+|back()                 |控制浏览器后退       |
+|forward() 	            |控制浏览器前进       | 
+|refresh()	             |刷新当前页面         |
+|clear()	               |清除文本            |
+|send_keys (value)	     |模拟按键输入         |
+|click()	               |单击元素            |
+|submit()	              |用于提交表单         |
+|get_attribute(name)	   |获取元素属性值        |
+|is_displayed()	        |设置该元素是否用户可见 |
+|size	                  |返回元素的尺寸        |
+|text	                  |获取元素的文本        |
+
+### webdriver模块中其他一些操作，[参考](https://blog.csdn.net/weixin_36279318/article/details/79475388)
+
+### 利用scrapy创建项目,使用selenium调用浏览器登陆要爬取的网站
+ * [参考实例](http://c.biancheng.net/view/2764.html)
