@@ -1,4 +1,4 @@
-# python_pandas库
+# python_[pandas库](http://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html)
 ___
 
 ## pandas数据处理
@@ -63,4 +63,15 @@ ___
    * groupby()
    
          ...
-         
+
+#### 6. 两种数据结构
+
+* series
+```python
+s = pd.Series([1, 3, 5, np.nan, 6, 8])
+```
+* DataFrame 
+```python
+dates = pd.date_range('20130101', periods=6)
+```
+
