@@ -1,4 +1,4 @@
-# Numpy库
+# [Numpy](https://docs.scipy.org/doc/numpy/user/quickstart.html)库
 ___
 
 ### 1. 特性
@@ -8,3 +8,4 @@ ___
          3. 用于读写硬盘上基于数组的数据集的工具。
          4. 线性代数运算、傅里叶变换，以及随机数生成。
          5. 用于将C、C++、Fortran代码集成到Python的工具。
+   [](https://cloud.tencent.com/developer/article/1333316)
