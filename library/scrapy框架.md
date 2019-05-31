@@ -43,4 +43,4 @@ ___
   |shell          |启动URL调试命令行  |scrapy shell [url]                 |
   
 
-
+#### 一个简单的实例，[参考](https://github.com/scrapy/quotesbot)
