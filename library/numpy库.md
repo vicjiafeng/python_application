@@ -1,12 +1,13 @@
 # [Numpy](https://docs.scipy.org/doc/numpy/user/quickstart.html)库
 ___
-## [Numpy](https://blog.csdn.net/xjl271314/article/details/80409034)是一个由多维数组对象和用于处理数组的例程集合组成的库，用于数据生成和一些计算。
+## Numpy是一个由多维数组对象和用于处理数组的例程集合组成的库，用于数据生成和一些计算。
 
 ### 1. 安装
 
  * python下安装
- 
-  `pip install numpy`
+```python 
+pip install numpy
+```
   
  * 引入
 ```python
@@ -113,7 +114,7 @@ import numpy as np
 
 `np.vsplit(a,2)    其中轴为 0 表示竖直分割,不考虑维度`
 
-
+#### 更多操作指令请参考[这里](https://blog.csdn.net/xjl271314/article/details/80409034)
 
 
 
