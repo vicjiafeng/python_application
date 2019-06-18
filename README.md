@@ -3,7 +3,7 @@ ___
 ![](https://img.shields.io/badge/donate-github-brightgreen.svg)
 ![](https://img.shields.io/badge/self_edited-vic-brightgreen.svg)
 
-#### There are some basic [python application](https://github.com/vicjiafeng/python_application/tree/master/application),  [some knowledge](https://github.com/vicjiafeng/python_application/tree/master/keypoints), [library](https://github.com/vicjiafeng/python_application/tree/master/library),[database](https://github.com/vicjiafeng/python_application/tree/master/database) and [some apps](https://github.com/vicjiafeng/python_application/tree/master/apps)
+#### There are some basic [python application](https://github.com/vicjiafeng/python_application/tree/master/application),  [some knowledge](https://github.com/vicjiafeng/python_application/tree/master/keypoints), [library](https://github.com/vicjiafeng/python_application/tree/master/library) and [some apps](https://github.com/vicjiafeng/python_application/tree/master/apps)
 
 ## Content
 
