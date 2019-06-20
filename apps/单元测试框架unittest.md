@@ -84,7 +84,8 @@ if __name__ == '__main__':
     #用TestLoader的方法是无法对case进行排序的，同时，suite中也可以套suite
     
     with open('unittestTestReport.txt', 'a') as f:             #同目录下生成了UnittestTextReport.txt, 测试报告显示在txt文件中
-        runner = unittest.TextTestRunner(stream=f, verbosity=2)   
+        #如果不希望仅能在控制台中看到测试报告，而是希望直接生成文件格式的测试报告，则可以指定 stream 属性，该属性是一个打开的类文件对象，这样程序就会把测试报告输出到该类文件对象中
+        runner = unittest.TextTestRunner(stream=f, verbosity=2)       #TextTestRunner是一个测试运行器，专门用于运行测试用例和测试包
         runner.run(suite)
 ```
 ### 使用test fixture，帮助搭建测试环境和清理环境
