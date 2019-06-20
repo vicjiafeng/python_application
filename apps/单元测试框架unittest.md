@@ -57,7 +57,7 @@ class TestMathFunc(unittest.TestCase):
         self.assertEqual(3, divide(6, 2))
         self.assertEqual(2.5, divide(5, 2))
 if __name__=='__main__':
-    unittest.main()
+    unittest.main()                       #也可以直接在命令行输入 python -m unittest 测试文件 运行测试用例，如果没有指定测试用例，该命令将自动查找并运行当前目录下的所有测试用例
 ```
 #### 简单说明
 
