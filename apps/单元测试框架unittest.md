@@ -88,6 +88,28 @@ if __name__ == '__main__':
         runner = unittest.TextTestRunner(stream=f, verbosity=2)       #TextTestRunner是一个测试运行器，专门用于运行测试用例和测试包
         runner.run(suite)
 ```
+
+* 多个testcase
+
+```python
+import unittest
+from test_mathfunc1 import TestMathFunc1
+from test_mathfunc2 import TestMathFunc2
+
+test_cases = (TestMathFunc1, TestMathFunc2)
+def whole_suite():
+    loader = unittest.TestLoader()
+    suite = unittest.TestSuite()
+    for test_class in test_cases:
+        tests = unittest.TestLoader().loadTestsFromTestCase(test_class)
+        suite.addTests(tests)
+    return suite
+if __name__ == '__main__':
+    with open('unittestTestReport.txt', 'a') as f:
+        runner = unittest.TextTestRunner(stream=f, verbosity=2)
+        runner.run(whole_suite())
+```
+
 ### 使用test fixture，帮助搭建测试环境和清理环境
   * 修改前面的test_mathfunc.py文件，添加setUp()和tearDown()两个方法，即每次执行各个测试case时，前后分别执行setUp()和tearDown()方法，setUp用来为测试准备环境，tearDown用来清理环境
 
