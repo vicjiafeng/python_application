@@ -47,7 +47,7 @@ from mathfunc import *
 class TestMathFunc(unittest.TestCase):
     
     def test_add(self):
-        self.assertEqual(3, add(1, 2))
+        self.assertEqual(3, add(1, 2))                      #使用断言方法判断函数的实际输出结果与期望输出结果是否一致
         self.assertNotEqual(3, add(1, 2))
     def test_minus(self):
         self.assertEqual(1, minus(3, 2))
