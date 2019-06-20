@@ -22,7 +22,7 @@ ___
 
 * `TextTestRunner是来执行测试用例的，其中的run(test)会执行TestSuite/TestCase中的run(result)方法。 测试的结果会保存到TextTestResult实例中，包括运行了多少测试用例，成功了多少，失败了多少等信息。`
 
-* `而对一个测试用例环境的搭建和销毁，是一个fixture。`
+* `而对一个测试用例环境的搭建和销毁，是一个测试固件test fixture，其中 setUp() 方法用于初始化测试固件；而 tearDown() 方法用于销毁测试固件。`
 
 ### unittest 实例
 
@@ -144,6 +144,8 @@ class TestMathFunc(unittest.TestCase):
     
     ...
 ```
+* 可以使用命令`python -m unittest -v 测试文件名` 运行测试用例程序    `#-v 选项，该选项用于告诉 unittest 生成更详细的输出信息`
+
 ### 跳过某个case
 #### skip装饰器
 ```python
