@@ -65,6 +65,24 @@ if __name__=='__main__':
   * `用例执行的结果的标识，成功是 . ，失败是 F，出错是 E，跳过是 S, 且不是按方法的顺序执行测试的`
   * `在unittest.main()中加 verbosity 参数可以控制输出的错误报告的详细程度，默认是 1，如果设为 0，则不输出每一用例的执行结果，即没有上面的结果中的第1行；如果设为 2，则输出详细的执行结果`
   
+### 补充：常用断言方法
+
+|断言方法                  |检查条件                                      |
+|-------------------------|--------------------------------------------|
+|assertEqual(a, b)        |a == b                                      |
+|assertNotEqual(a, b)     |a != b                                      |
+|assertIs(a, b)           |a is b                                      |
+|assertNot(a, b)          |a is not b                                  |
+|assertIsNone(x)          |x is None                                   |
+|assertIn(a, b)           |a in b                                      |
+|assertlsInstance(a, b)   |isinstance(a, b)                            |
+|assertTrue(x)            |bool(x) is True                             |
+|assertFalse(x)           |bool(x) is False                            |
+|assertGreater(a, b)      |a > b                                       |
+|assertLess(a, b)         |a < b                                       |
+|assertRegex(s, r)        |r.search(s)                                 |
+|assertCountEqual(a, b)   |a、b 两个序列包含的元素相同，不管元素出现的顺序如何 |
+  
 ### 组织TestSuite()
  * 使添加到TestSuite的case按顺序执行
  * 一次执行多个case
