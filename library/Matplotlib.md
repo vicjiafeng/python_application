@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 x_data=['2010','2011','2012','2013','2014','2015']
 y_data1=[45,48,53,56,58,60]
 y_data2=[47,49,52,58,62,64]
-plt.plot(x_data,y_data1,color='red',linewidth=2.0,linestyle='--',label='曲线1')
-plt.plot(x_data,y_data2,color='green',linewidth=3.0,linestyle='-.',label='曲线2')
+plt.plot(x_data,y_data1,color='red',linewidth=2.0,linestyle='--',label='曲线1',alpha=0.8)        #alpha表示透明度
+plt.plot(x_data,y_data2,color='green',linewidth=3.0,linestyle='-.',label='曲线2',alpha=0.8)
 
 #import matplotlib.font_manager as fm
 #my_font=fm.FontProperties(fname="/path")       使用 FontProperties 类来加载 C:Windows\Fonts\simkai.ttf 文件所对应的中文字体
@@ -37,3 +37,56 @@ plt.yticks([50,58],[r'正常',r'贵'])
 plt.show()
 
 ```
+
+### 饼图
+
+```python
+data=[...]
+labels=[...]
+explode=[...]
+colors=[...]
+#控制X轴和Y轴的范围（用于控制饼图的圆心，半径）
+plt.xlim(0,8)
+plt.ylim(0,8)
+#将横、纵坐标轴标准化处理，保证饼图是一个正圆，否则为椭圆
+plt.axes(aspect='equal')
+
+#绘制饼图
+plt.pie(x=data,labels=labels,explode=explode,colors=colors, ...)
+
+plt.title=("...")
+
+plt.show()
+```
+
+### 柱状图
+
+```python
+plt.bar(x=range(len(x_data)), height=y_data1, width=bar_width, ...)
+plt.bar(x=np.arange(len(x_data))+bar_width, height=y_data2, width=bar_width, ...)
+bar_width=0.5              #设定bar_width使不同柱状图依次显示
+
+# 在柱状图上显示具体数值, ha参数控制水平对齐方式, va控制垂直对齐方式
+for x, y in enumerate(y_data):
+    #在使用 text() 函数输出文字时，该函数的前两个参数控制输出文字的 X、Y 坐标，第三个参数则控制输出的内容。其中 va 参数控制文字的垂直对齐方式，ha 参数控制文字的水平对齐方式
+    plt.text(x, y + 100, '%s' % y, ha='center', va='bottom')
+for x, y in enumerate(y_data2):
+    plt.text(x, y + 100, '%s' % y, ha='center', va='top')
+plt.title()    
+plt.xlabel()
+plt.ylabel()
+
+plt.show()
+
+#水平柱状图，和bar()用法一致，只是在调用 barh() 函数时使用 y参数传入 Y 轴数据，使用 width 参数传入代表条柱宽度的数据
+plt.barh()    
+
+```
+### 散点图
+
+```python
+
+
+```
+
+
