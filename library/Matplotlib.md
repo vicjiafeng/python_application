@@ -41,6 +41,8 @@ plt.show()
 ### 饼图
 
 ```python
+import matplotlib.pyplot as plt
+
 data=[...]
 labels=[...]
 explode=[...]
@@ -62,9 +64,16 @@ plt.show()
 ### 柱状图
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x_data=[...]
+y_data1=[...]
+y_data2=[...]
+bar_width=0.5              #设定bar_width使不同柱状图依次显示
+
 plt.bar(x=range(len(x_data)), height=y_data1, width=bar_width, ...)
 plt.bar(x=np.arange(len(x_data))+bar_width, height=y_data2, width=bar_width, ...)
-bar_width=0.5              #设定bar_width使不同柱状图依次显示
 
 # 在柱状图上显示具体数值, ha参数控制水平对齐方式, va控制垂直对齐方式
 for x, y in enumerate(y_data):
@@ -85,8 +94,83 @@ plt.barh()
 ### 散点图
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
 
+x_data=[...]
+y_data1=[...]
+y_data2=[...]
 
+#绘制散点图，其中s表示指定散点的大小，c表示颜色，alpha表示透明度，edgecolors表示边框颜色,marker表示图形样式
+plt.scatter(x=x_data,y=y_data1,s=5,c='red',alpha=0.8,edgecolors='blue',marker='p',linewidths=1)
+
+plt.title()
+
+plt.show()
+```
+
+### 绘制等高线
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+delta=0.25
+#生成x轴数据
+x=np.arange(-3.0,3.0,delta)
+#生成y轴数据
+y=np.arange(-2.0,2.0,delta)
+#对x、y数据执行网格化
+X, Y = np.meshgrid(x, y)
+Z1 = np.exp(-X**2 - Y**2)
+Z2 = np.exp(-(X - 1)**2 - (Y - 1)**2)
+#计算z轴数据
+Z=(Z1-Z2)*2
+#绘制等高线
+c=plt.contour(x,y,Z,16,colors='black',linewidth=0.5)
+#等高线填充颜色
+plt.contourf(x,y,Z,16,cmap='rainbow')
+#绘制等高线数据
+plt.clabel(c,inline=True, fontsize = 10)
+#去除坐标轴
+plt.xticks(())
+plt.yticks(())
+
+plt.title()
+plt.xlabel()
+plt.ylabel()
+
+plt.show()
+```
+### 绘制3D图形
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure(figsize=(12, 8))
+ax = Axes3D(fig)
+
+delta=0.25
+#生成x轴数据
+x=np.arange(-3.0,3.0,delta)
+#生成y轴数据
+y=np.arange(-2.0,2.0,delta)
+#对x、y数据执行网格化
+X, Y = np.meshgrid(x, y)
+Z1 = np.exp(-X**2 - Y**2)
+Z2 = np.exp(-(X - 1)**2 - (Y - 1)**2)
+#计算z轴数据(高度)
+Z=(Z1-Z2)*2
+
+#绘制3D图形
+ax.plot.surface(X, Y, Z, rstride=1, cstride=1,cmap=plt.get_cmap('rainbow'))    #rstride（row）指定行的跨度, cstride(column)指定列的跨度
+
+#设置z轴范围
+ax.set_zlim(-2,2)
+
+plt.title()
+
+plt.show()
 ```
 
 
