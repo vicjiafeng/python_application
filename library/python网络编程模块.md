@@ -61,6 +61,9 @@ with urloopen(req) as f:
 * 有效管理session，使得之后的访问可以通过`session ID`识别客户端
 
 * 使用`OpenerDirector`对象来发送请求
+
+* 实例
+
 ```python
 cookie_jar = http.cookiejar.MozillaCookieJar(a.txt)      #指定文件创建CookieJar对象，对象将可以把cookie保存在文件中
 cookie_processor = HTTPCookieProcessor(cookie_jar)       #创建HTTPCookieProcessor对象,该对象负责调用 CookieJar 来管理 cookie
