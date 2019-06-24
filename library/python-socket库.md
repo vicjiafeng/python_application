@@ -96,7 +96,7 @@ while True:
     s.send(line.encode('utf-8'))             #将用户的键盘输入内容写入socket
 ```
 #### shutdown()方法
-`socket的shutdown(how)关闭方法，该方法可以只关闭 socket 的输入或输出部分，用以表示输出数据已经发送完成`
+`socket的shutdown(how)关闭方法，该方法可以只关闭socket的输入或输出部分(close()方法是完全关闭socket)，用以表示输出数据已经发送完成,因此不适合保持持久通信状态的交互式应用，只适用于一站式的通信协议，例如 HTTP 协议`
 
 * how参数：
 
