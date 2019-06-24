@@ -95,3 +95,13 @@ while True:
         break
     s.send(line.encode('utf-8'))             #将用户的键盘输入内容写入socket
 ```
+#### shutdown()方法
+`socket的shutdown(how)关闭方法，该方法可以只关闭 socket 的输入或输出部分，用以表示输出数据已经发送完成`
+
+* how参数：
+
+`1.SHUT_RD:关闭 socket 的输入部分，程序还可通过该 socket 输出数据`
+
+`2.SHUT_WR： 关闭该 socket 的输出部分，程序还可通过该 socket 读取数据`
+
+`3.SHUT_RDWR：全关闭。该 socket 既不能读取数据，也不能写入数据`
