@@ -134,7 +134,7 @@ while True:
 #服务器端
 import socket
 
-DATA_LEN = 2048;
+DATA_LEN = 2048
 #定义一个发送的数组
 cars=("audi","toyato","bmw")
 #通过type属性指定创建基于UDP协议的socket
@@ -151,8 +151,8 @@ s.close()
 #客户端
 import socket
 
-DATA_LEN = 2048;
-DEST_IP = "192.168.1.10";
+DATA_LEN = 2048
+DEST_IP = "192.168.1.10"
 #通过type属性指定创建基于UDP协议的socket
 s = socket.socket(type=socket.SOCK_DGRAM)
 #键盘输入信息
