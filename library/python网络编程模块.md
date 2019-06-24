@@ -56,4 +56,49 @@ with urloopen(req) as f:
     f.read()
     ...
 ```
+### http.cookiejar模块
+
+* 有效管理session，使得之后的访问可以通过`session ID`识别客户端
+
+* 使用`OpenerDirector`对象来发送请求
+```python
+cookie_jar = http.cookiejar.MozillaCookieJar(a.txt)      #指定文件创建CookieJar对象，对象将可以把cookie保存在文件中
+cookie_processor = HTTPCookieProcessor(cookie_jar)       #创建HTTPCookieProcessor对象,该对象负责调用 CookieJar 来管理 cookie
+opener = build_opener(cookie_processor)                  #TTPCookieProcessor 对象为参数,创建 OpenerDirector 对象
+
+#定义浏览器user-agent,定义登陆请求参数params，向页面发送request请求
+user-agent=...
+headers=...
+response = opener.open(request)    #使用OpenerDirector发送POST请求,该对象将会通过HTTPCookieProcessor调用CookieJar来管理cookie
+response.read()
+
+cookie_jar.save(ignore_discard=True, ignore_expires=True)    #将cookie信息写入磁盘文件
+#程序就会把 cookie 信息写入 a.txt 文件中。这意味着该程序将会把服务器响应的 session id 等 cookie 持久化保存在 a.txt 文件中，后面程序可以读取该 cookie文件信息，这样程序就可以模拟前面登录过的客户端，从而直接访问被保护页面了
+
+#发送GET请求的Request
+request = Request(url,headers)
+response = opener.open(request)
+response.read()
+
+#------当再次访问页面时，使用load（）加载a.txt中的Cookie信息,读取保存过的用户信息---------
+cookie_jar = http.cookiejar.MozillaCookieJar('a.txt')
+cookie_jar.load('a.txt',ignore_discard=True,ignore_expires=True)
+
+for item in cookie_jar:                      #遍历a.txt中保存的cookie信息
+    print('Name ='+ item.name)
+    print('Value ='+ item.value)
+cookie_processor = HTTPCookieProcessor(cookie_jar) 
+opener = build_opener(cookie_processor) 
+
+#定义浏览器user-agent,定义登陆请求参数params
+user-agent=...
+headers=...
+
+#无需创建页面post请求，因为之前的登陆session ID信息已经保存到a.txt中，并通过load完成读取，服务器通过session ID认定两次登陆是同一客户端
+
+#发送GET请求的Request
+request = Request(url,headers)
+response = opener.open(request)
+response.read()
+```
 
