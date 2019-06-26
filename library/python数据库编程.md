@@ -62,7 +62,7 @@ conn.close()                           #关闭数据库
 
 * 连接数据库 `conn=conn=mysql.connector.connect(user='root',password='12345',host='localhost',port='3306',dababase='python',use_unicode=True)                   #如果不指定服务器 IP 地址和端口，则使用默认的服务器 IP 地址 localhost 和默认端口 3306` 
 
-* 执行DML语句的占位符为`%s`
+* 执行DML语句的占位符为: `%s`
 
 * 可以设置`conn.autocommit = True`实现完成执行语句后自动提交事务
 
