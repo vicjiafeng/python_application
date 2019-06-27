@@ -92,13 +92,13 @@ ___
          
 * which命令
 
-         which ls/cd                 查看ls/cd命令是否存在，及存在的路径
+         which ls/cd                 查看ls/cd命令是否存在，及存在的路径,如果命令存在别名，还可以找到别名命令
          
 * whereis命令
 
    > 常用参数：
 
-    -b   定位可执行文件。
+    -b   定位二进制命令。
 
     -m   定位帮助文件。
 
@@ -112,13 +112,17 @@ ___
 
          locate -i /etc/sh              搜寻etc目录下所有以sh开头的文件,-i表示忽略大小写
          
-* find命令
+* [find命令](http://c.biancheng.net/view/779.html)
 
          find <指定目录> <指定条件> <指定动作>
          
          find . -name 'my*'             搜寻当前目录中文件名以my开头的文件
          
+         find . -iname                  按文件名搜索，不区分文件名大小
+         
          find . -mmin 10                搜寻当前目录中，过去10mins更新过的所有文件和目录
+         
+         find .-size[+-]大小  ---> find .-size -25k   搜寻当前目录小于25k的文件
          
 * chmod命令
 
