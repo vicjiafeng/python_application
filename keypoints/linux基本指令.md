@@ -262,7 +262,7 @@ ___
 
 ### 49. sync命令
 
-  * 把内存中的数据强制向硬盘中保存 --->  `$ sync     直接执行命令`
+  * 把内存中的数据强制向硬盘中保存 --->  `$ sync         #直接执行命令`
 
   [参考](https://github.com/jackfrued/Python-100-Days/blob/master/Day31-35/%E7%8E%A9%E8%BD%ACLinux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md)
 to be continued...
