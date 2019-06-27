@@ -264,16 +264,34 @@ ___
 
   * 把内存中的数据强制向硬盘中保存 --->  `$ sync         #直接执行命令`
 
-### 50. shutdown关机和重启
+### 50. 关机和重启
 
-  * -c: 取消已经执行的 shutdown 命令
+  * shutdown
   
-  * -h：关机
-  
-  * -r: 重启
-  
-  ` shutdown -r now       #现在重启`
+   `-h：关机`
+   
+   `-r: 重启`
  
+   ` shutdown -r now       #现在重启`
+   
+   `-c: 取消已经执行的 shutdown 命令`
+   
+  * reboot
+  
+   `reboot                       #直接使用rebot重启`
+   
+  * halt / poweroff
+  
+  `halt / poweroff               #直接使用halt或者poweroff 关机`
+  
+  * init
+  
+  `init 0              #关机`
+  
+  `init 6              #重启`
+ 
+### 51. 
+
   [参考](https://github.com/jackfrued/Python-100-Days/blob/master/Day31-35/%E7%8E%A9%E8%BD%ACLinux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md)
 to be continued...
   
