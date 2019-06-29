@@ -16,6 +16,12 @@ ___
 * urllib.parse.urlencode：将字典形式或列表形式的请求参数恢复成请求字符串，相当于parse_qs/parse_qsl逆函数
 * urllib.parse.urljoin：用于将一个 base_URL 和另一个资源 URL 连接成代表绝对地址的 URL
 
+>`1.被拼接的 URL 只是一个相对路径 path（不以斜线开头），那么该 URL 将会被拼接到 base 之后，如果 base 本身包含 path 部分，则用被拼接的 URL替换 base 所包含的 path 部分`
+
+>`2.被拼接的 URL 是一个根路径 path（以单斜线开头），那么该 URL 将会被拼接到 base 的域名之后`
+
+>`3.被拼接的 URL 是一个绝对路径 path（以双斜线开头），那么该 URL将会被拼接到 base 的 scheme 之后`
+
 #### urllib.request子模块
 
 * urllib.request.urlopen(url, data=None)：用于打开 url 指定的资源，并从中读取数据
