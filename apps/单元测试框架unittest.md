@@ -136,11 +136,11 @@ if __name__ == '__main__':
 class TestMathFunc(unittest.TestCase):
 
     def setUp(self):
-        print "do something before test.Prepare environment."
+        print(do something before test.Prepare environment.)
     def tearDown(self):
-        print "do something after test.Clean up."
+        print(do something after test.Clean up.)
     def test_add(self):
-        print "add"
+        print(add)
         self.assertEqual(3, add(1, 2))
         self.assertNotEqual(3, add(2, 2))
     def test_minus(self):
