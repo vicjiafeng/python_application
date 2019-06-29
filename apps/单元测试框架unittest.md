@@ -67,21 +67,22 @@ if __name__=='__main__':
   
 ### 补充：常用断言方法
 
-|断言方法                  |检查条件                                      |
-|-------------------------|--------------------------------------------|
-|assertEqual(a, b)        |a == b                                      |
-|assertNotEqual(a, b)     |a != b                                      |
-|assertIs(a, b)           |a is b                                      |
-|assertNot(a, b)          |a is not b                                  |
-|assertIsNone(x)          |x is None                                   |
-|assertIn(a, b)           |a in b                                      |
-|assertlsInstance(a, b)   |isinstance(a, b)                            |
-|assertTrue(x)            |bool(x) is True                             |
-|assertFalse(x)           |bool(x) is False                            |
-|assertGreater(a, b)      |a > b                                       |
-|assertLess(a, b)         |a < b                                       |
-|assertRegex(s, r)        |r.search(s)                                 |
-|assertCountEqual(a, b)   |a、b 两个序列包含的元素相同，不管元素出现的顺序如何 |
+|断言方法                           |检查条件                                      |
+|----------------------------------|--------------------------------------------|
+|assertEqual(a, b)                 |a == b                                      |
+|assertNotEqual(a, b)              |a != b                                      |
+|assertIs(a, b)                    |a is b                                      |
+|assertNot(a, b)                   |a is not b                                  |
+|assertIsNone(x)                   |x is None                                   |
+|assertIn(a, b)                    |a in b                                      |
+|assertlsInstance(a, b)            |isinstance(a, b)                            |
+|assertTrue(x)                     |bool(x) is True                             |
+|assertFalse(x)                    |bool(x) is False                            |
+|assertGreater(a, b)               |a > b                                       |
+|assertLess(a, b)                  |a < b                                       |
+|assertRegex(s, r)                 |r.search(s)                                 |
+|assertCountEqual(a, b)            |a、b 两个序列包含的元素相同，不管元素出现的顺序如何 |
+|assertRaises(exc,fun,*args,**kwarg|fun(*args, **kwargs)引发exc异常               |
   
 ### 组织TestSuite()
  * 使添加到TestSuite的case按顺序执行
@@ -162,7 +163,7 @@ class TestMathFunc(unittest.TestCase):
     
     ...
 ```
-* 可以使用命令`python -m unittest -v 测试文件名` 运行测试用例程序    `#-v 选项，该选项用于告诉 unittest 生成更详细的输出信息`
+* 可以使用命令`python -m unittest (-v) 测试文件名` 运行测试用例程序    `#-v 选项，该选项用于告诉 unittest 生成更详细的输出信息`
 
 ### 跳过某个case
 #### skip装饰器
