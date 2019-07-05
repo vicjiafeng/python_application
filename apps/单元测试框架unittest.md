@@ -158,7 +158,7 @@ class TestMathFunc(unittest.TestCase):
         print "This setUpClass() method only called once."
       
     @classmethod
-    def tearDown(cls):
+    def tearDownClass(cls):
         print "This tearDownClass() method only called once too."
     
     ...
