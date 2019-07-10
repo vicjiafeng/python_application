@@ -57,7 +57,7 @@ with urlopen('...', data=params) as f:
 req = Request(url='...', data=params, method = 'PUT')           #指定put方法
 #req.add_header(...)       可以使用request对象添加请求头
 
-with urloopen(req) as f:
+with urlopen(req) as f:
     f.status()
     f.read()
     ...
