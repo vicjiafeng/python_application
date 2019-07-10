@@ -11,7 +11,7 @@ def minNum(L=None):
         m = (L[int((l/2)-1)]+L[int(l/2)]) / 2
         print("%.1f", % m)
     else:
-        m = L[int((l-1)/2])
+        m = L[int((l-1)/2)]
         print(m)
               
 L=[3,2,4,5,1,6]
