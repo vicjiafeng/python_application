@@ -8,7 +8,7 @@ def DFS_graph(graph,v0):
     visited[v0] = 1
     DFS_seq = [v0]
     st = SStack()
-    st.push((0,graph.out-edge(v0)))
+    st.push((0,graph.out_edge(v0)))
     while not st.is_empty():
         i,edges = st.pop()
         if i < len(vnum):
