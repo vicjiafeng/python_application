@@ -9,7 +9,7 @@ def minNum(L=None):
     L.sort()
     if l%2 == 0:
         m = (L[int((l/2)-1)]+L[int(l/2)]) / 2
-        print("%.1f", % m)
+        print("%.1f" % m)
     else:
         m = L[int((l-1)/2)]
         print(m)
