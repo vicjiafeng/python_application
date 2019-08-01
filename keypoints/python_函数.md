@@ -6,4 +6,6 @@ ___
 round(x,n)  --->  round(29.1102, 2): 29.11
 ```
 ### 2.strftime()函数
-* time.strftime('format')    #按format格式输出时间
+```python
+time.strftime('format')         #按format格式输出时间
+```
